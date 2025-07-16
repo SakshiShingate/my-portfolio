@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Inside <head> -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Add this in your <head> -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <!-- Add this in your <head> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="dark-section">
+      <div class="navbar">
+        <h1>My Portfolio</h1>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="intro">
+        <div class="name">
+          <img src="photoNew.jpg" alt="Your Photo" class="profile-pic" />
+          <h2>Sakshi Shingate</h2>
+        </div>
+
+        <p>
+          I’m a passionate UI/UX designer and web developer focused on creating
+          beautiful, responsive, and user-friendly digital experiences.
+        </p>
+      </div>
+    </header>
+
+    <section id="about" class="section reveal">
+      <h2>About Me</h2>
+      <div class="about">
+        <img
+          src="undraw_design-sprint_7mmb.svg"
+          alt="Working illustration"
+          class="about-img"
+        />
+
+        <p>
+          Hi, I'm Sakshi, a passionate UI Designer, Web Designer, and Web
+          Developer focused on crafting clean, user-friendly, and responsive
+          digital experiences. My journey started with a curiosity for how
+          websites work, which quickly turned into a love for designing
+          beautiful interfaces and bringing them to life through code. I enjoy
+          working on both the visual and functional sides of the web — from
+          creating smooth user flows to developing responsive layouts. I believe
+          good design is not just how it looks, but how it works. Whether it's a
+          landing page, an e-commerce website, or a simple login form, I strive
+          to make every project intuitive and enjoyable for users. When I'm not
+          coding or designing, I explore design trends, improve my skills, and
+          build mini projects to grow my portfolio.
+        </p>
+      </div>
+    </section>
+
+    <section id="work" class="section reveal">
+      <h2>My Work</h2>
+      <div class="work">
+        <img
+          src="undraw_workspace_s6wf.svg"
+          alt="Working illustration"
+          class="work-img"
+        />
+
+        <div class="cards">
+          <div class="card">
+            <img
+              src="plants.png"
+              alt="Plant Shop Website"
+              class="clickable"
+              data-src="plants.png"
+            />
+            <h3 class="card-title">Plant Shop Website</h3>
+            <p class="card-desc">
+              A responsive e-commerce landing page built using React and custom
+              CSS.
+            </p>
+          </div>
+
+          <div class="card">
+            <img
+              src="finance app.png"
+              alt="Finance App UI"
+              class="clickable"
+              data-src="finance app.png"
+            />
+            <h3 class="card-title">Finance App UI</h3>
+            <p class="card-desc">
+              A clean and modern mobile UI design created using Figma for a
+              finance login flow.
+            </p>
+          </div>
+        </div>
+        <!-- Add more cards similarly -->
+      </div>
+    </section>
+    <div id="imgModal" class="modal">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="modalImage" />
+    </div>
+
+    <section id="skills" class="section reveal">
+      <h2>Skills</h2>
+      <ul class="skills-list">
+        <li data-tooltip="HyperText Markup Language">
+          <img src="html (1).png" alt="HTML" /><span>HTML</span>
+        </li>
+
+        <li data-tooltip="Cascading Style Sheets">
+          <img src="css-3 (1).png" alt="CSS" /><span>CSS</span>
+        </li>
+        <li data-tooltip="JavaScript">
+          <img src="js (1).png" alt="JavaScript" /><span>JavaScript</span>
+        </li>
+        <li data-tooltip="React JS">
+          <img src="physics (1).png" alt="React" /><span>React</span>
+        </li>
+        <li data-tooltip="Figma">
+          <img src="figma (1).png" alt="Figma" /><span>Figma</span>
+        </li>
+      </ul>
+    </section>
+
+    <section id="contact" class="section reveal">
+      <h2>Contact Me</h2>
+      <div class="contact-me">
+        <img src="undraw_contact-us_kcoa.svg" />
+        <div class="contact-info">
+          <p>
+            <span class="material-symbols-outlined">email</span>Email:
+            shingatesakshi9910@gmail.com
+          </p>
+          <p>
+            <a
+              href="https://www.linkedin.com/in/sakshi-shingate-268264240"
+              target="_blank"
+            >
+              <i class="fab fa-linkedin fa-2x"></i>
+            </a>
+            LinkedIn: www.linkedin.com/in/sakshi-shingate-268264240
+          </p>
+          <p>
+            <span class="material-symbols-outlined">phone</span>Phone: +91
+            9561462564
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2025 Sakshi Shingate. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      function updateNavbarStyle() {
+        const navbar = document.querySelector(".navbar");
+        const darkSection = document.querySelector(".dark-section");
+
+        const darkTop = darkSection.offsetTop;
+        const darkBottom = darkTop + darkSection.offsetHeight;
+
+        if (window.scrollY >= darkTop && window.scrollY < darkBottom) {
+          navbar.classList.add("light-navbar");
+        } else {
+          navbar.classList.remove("light-navbar");
+        }
+      }
+
+      // Run on scroll
+      window.addEventListener("scroll", updateNavbarStyle);
+
+      // Run once on page load
+      window.addEventListener("DOMContentLoaded", updateNavbarStyle);
+    </script>
+  </body>
+</html>
